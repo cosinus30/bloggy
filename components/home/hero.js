@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <>
       <section className="flex flex-col lg:flex-row lg:items-center gap-y-4 text-zinc-200 border-zinc-200 my-4">
-        <div className="mx-auto my-8 lg:mx-0 w-[480px] flex-shrink">
+        <div className="mx-auto my-8 lg:mx-0 md:w-[480px] flex-shrink">
           <Image
             src={"/me.jpeg"}
             width={600}
