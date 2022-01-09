@@ -8,6 +8,7 @@ summary: 'Arva et excutit estque. Emissi vestes iam primo iterum qualia iamque e
 certamina tergo in mille dolenti excipiunt tardius tuetur tenebat mediae.
 Suffuderat ingens solacia ipsosque iter; hiatu ille potentia, pulsavere.'
 isFeatured: true
+filename: 'getting-started-with-nextjs'
 ---
 
 # Rogantis sudore est Phoebi nullaque

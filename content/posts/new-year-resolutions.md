@@ -8,6 +8,7 @@ summary: 'Mirum cineres suspiria cernitis _mutasse_ oculos quem, veterem amplexa
 Illis tellus tenuissimus saxa triumphis et Helicona elige; illa At altera primum
 speluncae, gerebat. Oneri nunc pater!'
 isFeatured: false
+filename: 'new-year-resolutions'
 ---
 
 # Sollicitumque corpore aethere detulit superasset visa

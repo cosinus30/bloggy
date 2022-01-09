@@ -8,6 +8,7 @@ summary: 'Ibi non convertunt portas, at exhortari nomine probat miserarum alter 
 instruxere sitque virorum, ignoro! Illa cum in Charaxi utramque videre di video
 clipei, cecidisse fecissem'
 isFeatured: true
+filename: 'thinking-about-life'
 ---
 
 # Potest monendo seduxit inmotusque tamen arce Crotonis
