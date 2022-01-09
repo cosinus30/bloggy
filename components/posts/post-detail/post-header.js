@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function PostHeader({title, image}) {
     return (
-        <header className="flex flex-col gap-y-4">
+        <header className="space-y-4">
             <h1 className="text-5xl font-extrabold">
                 {title}
             </h1>
