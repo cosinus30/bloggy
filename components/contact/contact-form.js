@@ -1,12 +1,28 @@
+import { useForm } from "react-hook-form";
+
 export default function ContactForm() {
+  const { register, handleSubmit } = useForm();
+
+  const sendMessageHandler = async (data) => {
+    const result = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({...data}),
+    });
+    console.log(result)
+  };
+
   return (
     <section className="shadow-2xl max-w-[700px] mx-auto px-12 py-16 space-y-8 my-8">
       <h1 className="text-4xl">How can I help you?</h1>
-      <form className="">
+      <form onSubmit={handleSubmit((data) => sendMessageHandler(data))}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8">
           <div className="flex flex-col space-y-2">
             <label htmlFor="email">Email</label>
             <input
+              {...register("email")}
               type="email"
               id="email"
               name="email"
@@ -16,20 +32,26 @@ export default function ContactForm() {
           </div>
           <div className="flex flex-col space-y-2">
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" className="px-4 py-2 bg-zinc-800 focus:bg-zinc-700" />
+            <input
+              {...register("name")}
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              className="px-4 py-2 bg-zinc-800 focus:bg-zinc-700"
+            />
           </div>
           <div className="col-span-full flex flex-col space-y-2">
             <label htmlFor="message">Your message</label>
             <textarea
+              {...register("message")}
               type="name"
               id="message"
               name="message"
               placeholder="Enter your message..."
               rows={5}
               className="bg-zinc-800 text-zinc-100 p-2 focus:bg-zinc-700"
-            >
-              {" "}
-            </textarea>
+            ></textarea>
           </div>
           <div className="col-span-full p-2 mx-auto">
             <button
