@@ -1,18 +1,38 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Alert from "../ui/alert";
 
 export default function ContactForm() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
+  const [requestStatus, setRequestStatus] = useState(null);
 
   const sendMessageHandler = async (data) => {
-    const result = await fetch("/api/contact", {
+    setRequestStatus("pending");
+    const response = await fetch("/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({...data}),
+      body: JSON.stringify({ ...data }),
     });
-    console.log(result)
+    if (response.status === 200) {
+      setRequestStatus("success");
+      reset();
+    } else {
+      setRequestStatus("error");
+    }
   };
+
+  let notification = null;
+  if (requestStatus === "pending") {
+    notification = <Alert key={"sending"} title="Sending..." message="Your message on its way." type="pending" />;
+  }
+  if (requestStatus === "success") {
+    notification = <Alert key={"sent"} title="Sent!" message="Your message arrived." type="success" />;
+  }
+  if (requestStatus === "error") {
+    notification = <Alert key={"nooo"} title="Ooops!" message="Something went wrong." type="error" />;
+  }
 
   return (
     <section className="shadow-2xl max-w-[700px] mx-auto px-12 py-16 space-y-8 my-8">
@@ -75,6 +95,7 @@ export default function ContactForm() {
           </div>
         </div>
       </form>
+        {notification}
     </section>
   );
 }
