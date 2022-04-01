@@ -14,7 +14,7 @@ export default function Hero() {
           />
         </div>
         <div className="flex flex-col items-center text-center lg:text-left lg:items-start mx-8 gap-y-8">
-          <h1 className="text-4xl lg:text-6xl font-bold">Hi, I'm Kerem</h1>
+          <h1 className="text-4xl lg:text-6xl font-bold">Hi, I&apos;m Kerem</h1>
           <p className="text-lg font-light">
             This blog is my first project with Next.js. So I am really excited to see what I can do with it.
           </p>

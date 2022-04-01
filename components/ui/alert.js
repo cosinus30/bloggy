@@ -21,7 +21,7 @@ export default function Alert({ title, message, type }) {
     return () => {
       clearTimeout(timeout);
     };
-  });
+  }, [bg, type]);
 
   return (
     <>

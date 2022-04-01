@@ -7,7 +7,7 @@ export default function Footer() {
         <p>
           Made with Next.js by <Link href="/">Yunus Kerem Turk</Link>
         </p>
-        <a href="https://www.github.com/cosinus30" target="_blank">
+        <a href="https://www.github.com/cosinus30" target="_blank" rel="noreferrer">
           Catch me on Github
         </a>
       </div>
