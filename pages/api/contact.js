@@ -1,4 +1,3 @@
-import { password, username } from "../../constants/credentials";
 import { MongoClient } from "mongodb";
 
 export default async function handler(req, res) {
@@ -8,7 +7,6 @@ export default async function handler(req, res) {
       res.status(400).json({ message: "Invalid input", error: true });
       return;
     }
-
     let client;
     try {
       client = await connectDatabase();
@@ -39,7 +37,7 @@ const validateEmail = (email) => {
 
 async function connectDatabase() {
   const client = await MongoClient.connect(
-    `mongodb+srv://${username}:${password}@cluster0.5rv5l.mongodb.net/messages?retryWrites=true&w=majority`
+    `mongodb+srv://${process.env.db_username}:${process.env.db_password}@cluster0.5rv5l.mongodb.net/messages?retryWrites=true&w=majority`
   );
   return client;
 }
